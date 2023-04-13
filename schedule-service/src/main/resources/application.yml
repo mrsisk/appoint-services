@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+       # enable_lazy_load_no_trans: true
+    show-sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/appoint
+    username: postgres
+    password: postgres
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9001/realms/sisk
+
+server:
+  port: 8082

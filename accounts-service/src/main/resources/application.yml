@@ -1,0 +1,45 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            authorization-grant-type: client_credentials
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+        provider:
+          keycloak:
+            token-uri: http://localhost:9001/realms/sisk/protocol/openid-connect/token
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9001/realms/sisk
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${SMTP_USERNAME}
+    password: ${SMTP_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+  rabbitmq:
+    addresses: localhost:5672
+
+accounts-manager:
+  security:
+    token-secret: ${TOKEN_SECRET_KEY}
+    token-validity: 86400000
+  mail-service:
+    email: ${SMTP_USERNAME}
+  oauth:
+    client-id: ${CLIENT_ID}
+    client-secret: ${CLIENT_SECRET}
+rabbitmq:
+  exchange:
+    registration: registration.exchange
+  queue:
+    notification: registration.queue
+  routing-keys:
+    registration-notification: registration-alert.routing-key

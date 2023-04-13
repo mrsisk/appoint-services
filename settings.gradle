@@ -1,0 +1,3 @@
+rootProject.name = 'appoint-services'
+include ':schedule-service'
+include ':accounts-service'
