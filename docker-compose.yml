@@ -11,9 +11,17 @@ services:
       - start-dev --features=token-exchange,admin-fine-grained-authz
     ports:
       - 9001:8080
-  rabbitmq:
-    image: rabbitmq:3.11.13-management-alpine
-    container_name: rabbitmq
+  appoint-gateway:
+    container_name: appoint-gateway
+    image: mrsisk/appoint-gateway:latest
+    environment:
+      - ACCOUNTS_URL=http://host.docker.internal:8084
+      - API_URL=http://host.docker.internal:8082
     ports:
-      - 5672:5672
-      - 15672:15672
+      - 8888:8083
+    networks:
+      - spring
+
+networks:
+  spring:
+    driver: bridge

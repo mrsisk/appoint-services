@@ -24,7 +24,7 @@ public class OAuth2LoginSecurityConfig {
                 .cors()
                 .disable()
                 .authorizeExchange(authorizeExchangeSpec -> {
-                    authorizeExchangeSpec.anyExchange().authenticated();
+                    authorizeExchangeSpec.anyExchange().permitAll();
                 });
 
         http.oauth2ResourceServer(oauth2 -> oauth2.jwt(jwtSpec -> {
