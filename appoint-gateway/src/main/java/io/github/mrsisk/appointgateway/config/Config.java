@@ -19,11 +19,13 @@ public class Config {
         return  builder
                 .routes()
                 .route("appoint-accounts", predicateSpec ->
-                    predicateSpec.path("/accounts")
-                            .uri(accountUrl+"/**")
+                    predicateSpec.path("/auth/**")
+                            .uri(accountUrl)
                 ).route("appoint-api", predicateSpec ->
                         predicateSpec.path("/api/v1/**")
-                                .uri(apiUrl+"/**")
-                ).build();
+                                .uri(apiUrl)
+
+                )
+                .build();
     }
 }
