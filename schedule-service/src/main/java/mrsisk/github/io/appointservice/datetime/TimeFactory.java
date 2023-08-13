@@ -1,4 +1,4 @@
-package mrsisk.github.io.appointserver.datetime;
+package mrsisk.github.io.appointservice.datetime;
 
 import org.springframework.stereotype.Component;
 

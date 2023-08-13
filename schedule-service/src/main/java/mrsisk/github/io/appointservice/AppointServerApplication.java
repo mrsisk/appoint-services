@@ -1,4 +1,4 @@
-package mrsisk.github.io.appointserver;
+package mrsisk.github.io.appointservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

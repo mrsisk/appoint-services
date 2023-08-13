@@ -1,8 +1,8 @@
-package mrsisk.github.io.appointserver.controllers;
+package mrsisk.github.io.appointservice.controllers;
 
 
-import mrsisk.github.io.appointserver.datetime.DateFactory;
-import mrsisk.github.io.appointserver.datetime.WorkDay;
+import mrsisk.github.io.appointservice.datetime.DateFactory;
+import mrsisk.github.io.appointservice.datetime.WorkDay;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package mrsisk.github.io.appointserver.security;
+package mrsisk.github.io.appointservice.security;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.core.GrantedAuthority;

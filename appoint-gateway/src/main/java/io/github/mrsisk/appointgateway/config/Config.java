@@ -5,7 +5,6 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 @Configuration
 public class Config {
 
@@ -21,6 +20,7 @@ public class Config {
                 .route("appoint-accounts", predicateSpec ->
                     predicateSpec.path("/auth/**")
                             .uri(accountUrl)
+
                 ).route("appoint-api", predicateSpec ->
                         predicateSpec.path("/api/v1/**")
                                 .uri(apiUrl)
@@ -28,4 +28,7 @@ public class Config {
                 )
                 .build();
     }
+
+
+
 }

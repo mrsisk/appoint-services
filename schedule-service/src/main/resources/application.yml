@@ -1,7 +1,8 @@
 spring:
+
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -17,7 +18,21 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9001/realms/sisk
+          issuer-uri: http://localhost:9000/realms/appoint
+      client:
+        registration:
+          keycloak:
+            authorization-grant-type: client_credentials
+            client-id: schedule-service
+            client-secret: Js6LXCT7Bh58ODkA1S3KxMCL4eP6NxiU
+        provider:
+          keycloak:
+            token-uri: http://localhost:9000/realms/appoint/protocol/openid-connect/token
 
 server:
   port: 8082
+
+jwt:
+  secret: ${JWT_SECRET}
+accounts:
+  base-uri: http://localhost:8084
