@@ -11,12 +11,12 @@ import java.time.ZonedDateTime;
 @Entity
 public class Booking {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String userId;
     private LocalDate date;
-    private ZonedDateTime start;
-    private ZonedDateTime end;
+    private ZonedDateTime startTime;
+    private ZonedDateTime endTime;
 
     private SessionType sessionType;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -26,13 +26,13 @@ public class Booking {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public Booking(String userId, LocalDate date, ZonedDateTime start, ZonedDateTime end, SessionType sessionType, Agent agent, Status status) {
+    public Booking(String userId, LocalDate date, ZonedDateTime startTime, ZonedDateTime endTime, SessionType sessionType, Agent agent, Status status) {
         this.userId = userId;
         this.date = date;
-        this.start = start;
-        this.end = end;
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.sessionType = sessionType;
-        this.agent = agent;
+      //  this.agent = agent;
         this.status = status;
     }
 
@@ -63,20 +63,20 @@ public class Booking {
         this.date = date;
     }
 
-    public ZonedDateTime getStart() {
-        return start;
+    public ZonedDateTime getStartTime() {
+        return startTime;
     }
 
-    public void setStart(ZonedDateTime start) {
-        this.start = start;
+    public void setStartTime(ZonedDateTime startTime) {
+        this.startTime = startTime;
     }
 
-    public ZonedDateTime getEnd() {
-        return end;
+    public ZonedDateTime getEndTime() {
+        return endTime;
     }
 
-    public void setEnd(ZonedDateTime end) {
-        this.end = end;
+    public void setEndTime(ZonedDateTime endTime) {
+        this.endTime = endTime;
     }
 
     public SessionType getSessionType() {

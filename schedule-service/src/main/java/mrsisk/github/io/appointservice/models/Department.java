@@ -9,7 +9,7 @@ import java.util.Set;
 @Entity
 public class Department {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private String code;
@@ -17,6 +17,16 @@ public class Department {
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Agent> agents;
+
+    public Set<Agent> getAgents() {
+        return agents;
+    }
+
+    public void setAgents(Set<Agent> agents) {
+        this.agents = agents;
+    }
+
+
 
     public Department(String name, String code) {
         this.name = name;

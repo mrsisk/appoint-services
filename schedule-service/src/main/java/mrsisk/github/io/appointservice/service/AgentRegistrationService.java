@@ -24,7 +24,6 @@ public class AgentRegistrationService {
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(dto)
                 .exchangeToMono(clientResponse -> {
-                    System.out.println("RESPONSE FROM AGENT REG CODE  " + clientResponse.statusCode());
                     return Mono.just(clientResponse.statusCode());
                 });
     }

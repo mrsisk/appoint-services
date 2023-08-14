@@ -15,8 +15,7 @@ import java.util.List;
 @Configuration
 public class Config {
 
-//    @Value("${accounts.base-uri}")
-//    String baseUrl;
+
     @Bean
     WebClient webClient(ReactiveOAuth2AuthorizedClientManager authorizedClientManager) {
         ServerOAuth2AuthorizedClientExchangeFilterFunction oauth2Client =
